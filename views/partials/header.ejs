@@ -12,16 +12,19 @@
 </head>
 
 <body>
-  <nav>
-    <a href="/">Home</a>
-    <% if (user) { %>
-      <a href="">Enrolled Classes</a>
-      <a href="">Enroll in a new class</a>
-      <a href="">Class list</a>
-      <a href="/logout">Logout</a>
+  <section class="nav-wrapper">
+    <img src="/images/read-book.svg">
+    <nav>
+      <a href="/">Home</a>
+      <% if (user) { %>
+        <a href="">Enrolled Classes</a>
+        <a href="">Enroll in a new class</a>
+        <a href="">Class list</a>
+        <a href="/logout">Logout</a>
 
-      <% } else { %>
-        <a href="/auth/google">Login</a>
-        <% } %>
-  </nav>
+        <% } else { %>
+          <a href="/auth/google">Login</a>
+          <% } %>
+    </nav>
+  </section>
   <h1>Welcome to My Classes</h1>

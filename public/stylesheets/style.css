@@ -8,9 +8,6 @@ body {
   
 }
 
-nav {
-  background-color: gray;
-}
 
 nav > a {
   margin: 20px;
@@ -41,7 +38,7 @@ a:visited {
   justify-content: space-evenly;
   align-items: center;
   flex-wrap: wrap;
-  background-color: gray;
+  background-color: #f1f2f6;
   height: 5vmin;
   
 }

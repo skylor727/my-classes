@@ -1,0 +1,38 @@
+<%- include('../partials/header') %>
+
+  <form action="">
+    <table id="list">
+      <thead>
+        <tr>
+          <th>Class Name</th>
+          <th>Subject</th>
+          <th>Instructor</th>
+          <th>Difficulty</th>
+          <th>Class Details</th>
+          <th>Enroll</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% classes.forEach(function(c) { %>
+          <tr>
+            <td>
+              <%= c.title %>
+            </td>
+            <td>
+              <%= c.subject %>
+            </td>
+            <td>
+              <%= c.instructor %>
+            </td>
+            <td>
+              <%= c.difficulty %>
+            </td>
+            <td><a href="/classes/<%= c._id %>">DETAILS</a></td>
+            <td><label>Enroll</label><input type="checkbox"></td>
+          </tr>
+          <% }); %>
+      </tbody>
+    </table>
+    <button type="submit"></button>
+  </form>
+  <%- include('../partials/footer') %>

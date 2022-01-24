@@ -1,5 +1,4 @@
 <%- include('../partials/header') %>
-
     <table id="list">
         <thead>
             <tr>
@@ -7,27 +6,31 @@
                 <th>Subject</th>
                 <th>Instructor</th>
                 <th>Difficulty</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
             <% classes.forEach(function(c) { %>
-                <tr>
-                    <td>
-                        <%= c.title %>
-                    </td>
-                    <td>
-                        <%= c.subject %>
-                    </td>
-                    <td>
-                        <%= c.instructor %>
-                    </td>
-                    <td>
-                        <%= c.difficulty %>
-                    </td>
-                    <td><a href="/classes/<%= c._id %>">DETAILS</a></td>
-                </tr>
-                <% }); %>
+                <form action="/classes/enrolled/<%=c._id%>?_method=DELETE" method="POST">
+                    <tr>
+                        <td>
+                            <%= c.title %>
+                        </td>
+                        <td>
+                            <%= c.subject %>
+                        </td>
+                        <td>
+                            <%= c.instructor %>
+                        </td>
+                        <td>
+                            <%= c.difficulty %>
+                        </td>
+                        <td><a href="/classes/<%= c._id %>">DETAILS</a></td>
+                        <td><input type="checkbox" name="unenroll" value="<%=c.title%>"><label>Unenroll</label></td>
+                    </tr>
+                    <% }); %>
         </tbody>
     </table>
-
+    <button type="submit">Unenroll from Class</button>
+    </form>
     <%- include('../partials/footer') %>

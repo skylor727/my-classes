@@ -41,10 +41,19 @@ const enrolled = (req, res) => {
       res.render("classes/enrolled", { classes });
     });
 };
+
+const deleteClass = (req, res) => {
+  Class.updateMany(
+    { title: { $in: req.body.unenroll } },
+    { $pull: { enrollees: req.user.id } }
+  ).then((classes) => res.redirect("/classes/enrolled"));
+};
+
 module.exports = {
   show,
   index,
   new: newClass,
   enrollInClass,
   enrolled,
+  delete: deleteClass,
 };

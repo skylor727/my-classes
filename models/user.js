@@ -10,7 +10,6 @@ const userSchema = new Schema(
     },
     email: String,
     avatar: String,
-    enrolledClasses: [{ type: Schema.Types.ObjectId, ref: "Class" }],
   },
   {
     timestamps: true,

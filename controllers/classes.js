@@ -23,16 +23,28 @@ const newClass = (req, res) => {
 
 const enrollInClass = (req, res) => {
   User.findById(req.user.id).then((user) => {
-    Class.find({ title: { $in: req.body.enroll } }).then((results) => {
-      user.enrolledClasses.push(...results);
-      user.save((err) => res.redirect("/users/enrolled"));
+    Class.find({ title: { $in: req.body.enroll } }).then((classes) => {
+      classes.forEach((c) => {
+        console.log(c);
+        c.enrollees.push(user);
+        c.save();
+      });
+      res.redirect("/classes/enrolled");
     });
   });
 };
 
+const enrolled = (req, res) => {
+  Class.find({ enrollees: req.user._id })
+    .populate("enrollees")
+    .then((classes) => {
+      res.render("classes/enrolled", { classes });
+    });
+};
 module.exports = {
   show,
   index,
   new: newClass,
   enrollInClass,
+  enrolled,
 };

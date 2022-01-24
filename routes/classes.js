@@ -20,4 +20,5 @@ router.get("/:id", classesCtrl.show);
 
 //DELETE the individual class
 router.delete("/enrolled/:id", classesCtrl.delete);
+
 module.exports = router;

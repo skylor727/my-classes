@@ -25,7 +25,6 @@ const enrollInClass = (req, res) => {
   User.findById(req.user.id).then((user) => {
     Class.find({ title: { $in: req.body.enroll } }).then((classes) => {
       classes.forEach((c) => {
-        console.log(c);
         c.enrollees.push(user);
         c.save();
       });

@@ -1,0 +1,33 @@
+<%- include('../partials/header') %>
+
+    <table id="list">
+        <thead>
+            <tr>
+                <th>Class Name</th>
+                <th>Subject</th>
+                <th>Instructor</th>
+                <th>Difficulty</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% classes.forEach(function(c) { %>
+                <tr>
+                    <td>
+                        <%= c.title %>
+                    </td>
+                    <td>
+                        <%= c.subject %>
+                    </td>
+                    <td>
+                        <%= c.instructor %>
+                    </td>
+                    <td>
+                        <%= c.difficulty %>
+                    </td>
+                    <td><a href="/classes/<%= c._id %>">DETAILS</a></td>
+                </tr>
+                <% }); %>
+        </tbody>
+    </table>
+
+    <%- include('../partials/footer') %>

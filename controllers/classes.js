@@ -1,8 +1,11 @@
 const Class = require("../models/class");
+const User = require("../models/user");
 
 const index = (req, res) => {
   Class.find({}).then((classes) => {
-    res.render("classes/index", { classes });
+    User.findById(req.user.id).then((user) =>
+      res.render("classes/index", { classes, user })
+    );
   });
 };
 
@@ -18,8 +21,18 @@ const newClass = (req, res) => {
   });
 };
 
+const enrollInClass = (req, res) => {
+  User.findById(req.user.id).then((user) => {
+    Class.find({ title: { $in: req.body.enroll } }).then((results) => {
+      user.enrolledClasses.push(...results);
+      user.save((err) => res.redirect("/users/enrolled"));
+    });
+  });
+};
+
 module.exports = {
-  index,
   show,
+  index,
   new: newClass,
+  enrollInClass,
 };

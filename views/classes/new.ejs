@@ -1,6 +1,6 @@
 <%- include('../partials/header') %>
 
-  <form action="">
+  <form action="/classes/enroll" method="POST">
     <table id="list">
       <thead>
         <tr>
@@ -8,8 +8,8 @@
           <th>Subject</th>
           <th>Instructor</th>
           <th>Difficulty</th>
-          <th>Class Details</th>
-          <th>Enroll</th>
+          <th></th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
@@ -28,11 +28,11 @@
               <%= c.difficulty %>
             </td>
             <td><a href="/classes/<%= c._id %>">DETAILS</a></td>
-            <td><label>Enroll</label><input type="checkbox"></td>
+            <td><label>Enroll</label><input name="enroll" type="checkbox" value="<%=c.title%>"></td>
           </tr>
           <% }); %>
       </tbody>
     </table>
-    <button type="submit"></button>
+    <button type="submit">ENROLL</button>
   </form>
   <%- include('../partials/footer') %>

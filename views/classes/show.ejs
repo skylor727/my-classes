@@ -41,26 +41,26 @@
 
     <!-- The Modal -->
     <div id="myModal" class="modal">
-
         <!-- Modal content -->
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <section class="reviews-form">
-                <h2>Leave a Review for <%=classes.instructor%>'s Class</h2>
-                <form method="POST" action="/classes/<%= classes._id %>/reviews">
-                    <label>Review:</label>
-                    <textarea name="content"></textarea>
-                    <label>Rating:</label>
-                    <select name="rating">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3" selected>3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                    </select>
-                    <input type="submit" value="Add Review">
-                </form>
-            </section>
+        <div class="modal-content form-style-3">
+            <form method="POST" action="/classes/<%= classes._id %>/reviews">
+                <fieldset>
+                    <legend>Review</legend>
+                    <span class="close">&times;</span>
+                    <h3>Leave a Review for <%=classes.instructor%>'s Class</h3>
+                    <label for="field4"><span>Rating <span class="required">*</span></span><select name="rating"
+                            class="select-field">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected>5</option>
+                        </select></label>
+                    <label for="field6"><span>Details <span class="required">*</span></span><textarea name="content"
+                            class="textarea-field"></textarea></label>
+                    <label><span> </span><input type="submit" value="Add Review" /></label>
+                </fieldset>
+            </form>
         </div>
     </div>
 

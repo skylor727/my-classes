@@ -154,12 +154,8 @@ button:hover {
 }
 
 .modal-content {
-  background-color: #fefefe;
   margin: auto;
   padding: 20px;
-  border: 1px solid #888;
-  width: 60%;
-  text-align: center;
 }
 
 .close {
@@ -175,3 +171,88 @@ button:hover {
   text-decoration: none;
   cursor: pointer;
 }
+
+.form-style-3 {
+  max-width: 450px;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+.form-style-3 label {
+  display: block;
+  margin-bottom: 10px;
+}
+.form-style-3 label > span {
+  float: left;
+  width: 100px;
+  font-weight: bold;
+  font-size: 13px;
+  text-shadow: 1px 1px 1px #fff;
+}
+.form-style-3 fieldset {
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  margin: 0px 0px 10px 0px;
+  border: 1px solid #7fc8f8;
+  padding: 20px;
+  background: #f9f9f9;
+  box-shadow: inset 0px 0px 15px #7fc8f8;
+  -moz-box-shadow: inset 0px 0px 15px #7fc8f8;
+  -webkit-box-shadow: inset 0px 0px 15px #7fc8f8;
+}
+.form-style-3 fieldset legend {
+  border-top: 1px solid #7fc8f8;
+  border-left: 1px solid #7fc8f8;
+  border-right: 1px solid #7fc8f8;
+  border-radius: 5px 5px 0px 0px;
+  -webkit-border-radius: 5px 5px 0px 0px;
+  -moz-border-radius: 5px 5px 0px 0px;
+  background: #f9f9f9;
+  padding: 0px 8px 3px 8px;
+  box-shadow: -0px -1px 2px #7fc8f8;
+  -moz-box-shadow: -0px -1px 2px #7fc8f8;
+  -webkit-box-shadow: -0px -1px 2px #7fc8f8;
+  font-weight: normal;
+  font-size: 12px;
+}
+
+.form-style-3 textarea {
+  width: 250px;
+  height: 100px;
+}
+
+.form-style-3 select,
+.form-style-3 textarea {
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border: 1px solid #7fc8f8;
+  outline: none;
+  padding: 5px 8px 5px 8px;
+  box-shadow: inset 1px 1px 4px #7fc8f8;
+  -moz-box-shadow: inset 1px 1px 4px #7fc8f8;
+  -webkit-box-shadow: inset 1px 1px 4px #7fc8f8;
+  background: #f9f9f9;
+  width: 50%;
+}
+.form-style-3 input[type="submit"] {
+  background: #7fc8f8;
+  border: 1px solid #f9f9f9;
+  padding: 5px 15px 5px 15px;
+  color: #f9f9f9;
+  box-shadow: inset -1px -1px 3px #7fc8f8;
+  -moz-box-shadow: inset -1px -1px 3px #7fc8f8;
+  -webkit-box-shadow: inset -1px -1px 3px #7fc8f8;
+  border-radius: 3px;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  font-weight: bold;
+}
+.form-style-3 input[type="submit"]:hover {
+  cursor: pointer;
+}
+.required {
+  color: red;
+  font-weight: normal;
+}
+

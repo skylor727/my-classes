@@ -72,35 +72,11 @@ button:hover {
   border: 10px solid #ccc;
 }
 
-.tip-up {
-  top: -25px; /* Same as body margin top + border */
-  left: 10px;
-  border-right-color: transparent;
-  border-left-color: transparent;
-  border-top-color: transparent;
-}
-
-.tip-down {
-  bottom: -25px;
-  left: 10px;
-  border-right-color: transparent;
-  border-left-color: transparent;
-  border-bottom-color: transparent;
-}
-
 .tip-left {
   top: 10px;
   left: -25px;
   border-top-color: transparent;
   border-left-color: transparent;
-  border-bottom-color: transparent;
-}
-
-.tip-right {
-  top: 10px;
-  right: -25px;
-  border-top-color: transparent;
-  border-right-color: transparent;
   border-bottom-color: transparent;
 }
 
@@ -118,8 +94,44 @@ button:hover {
 .body .message {
   min-height: 30px;
   border-radius: 3px;
-  font-family: Arial;
   font-size: 14px;
   line-height: 1.5;
   color: #797979;
+}
+
+.review-wrapper > img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  float: left;
+  margin-right: 5vmin;
+}
+
+.dialogbox {
+  margin-left: 8vmin;
+}
+
+.message > form > button {
+  display: flex;
+  background-color: inherit;
+  color: red;
+  border: 0px;
+  padding: 0;
+  float: right;
+}
+
+.username {
+display: flex;
+align-self: flex-start;
+position:absolute;
+height: 11vmin;
+width: 8vmin;
+align-items: flex-end;
+margin-left: .7vmin;
+font-size: 15px;
+
+}
+
+.review-wrapper {
+  height: 10vmin;
 }

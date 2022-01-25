@@ -1,7 +1,25 @@
 <%- include('../partials/header') %>
+    <script>
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const modal = document.getElementById("myModal");
+            const btn = document.getElementById("myBtn");
+            const span = document.getElementsByClassName("close")[0];
+
+            btn.addEventListener('click', () => modal.style.display = "block");
+            span.addEventListener('click', () => modal.style.display = "none");
+            window.addEventListener('click', (event) => {
+                if (event.target === modal) {
+                    modal.style.display = "none"
+                }
+            })
+        });
+    </script>
 
     <section id="show-page">
-
+        <h2>
+            <%= classes.title %> Class Information
+        </h2>
         <div>Title: </div>
         <div>
             <%= classes.title %>
@@ -20,21 +38,32 @@
         </div>
         <a href="/classes/new">Enrollment Page</a>
     </section>
-    <section class="reviews-form">
-        <form method="POST" action="/classes/<%= classes._id %>/reviews">
-            <label>Review:</label>
-            <textarea name="content"></textarea>
-            <label>Rating:</label>
-            <select name="rating">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3" selected>3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select>
-            <input type="submit" value="Add Review">
-        </form>
-    </section>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <section class="reviews-form">
+                <h2>Leave a Review for <%=classes.instructor%>'s Class</h2>
+                <form method="POST" action="/classes/<%= classes._id %>/reviews">
+                    <label>Review:</label>
+                    <textarea name="content"></textarea>
+                    <label>Rating:</label>
+                    <select name="rating">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3" selected>3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    <input type="submit" value="Add Review">
+                </form>
+            </section>
+        </div>
+    </div>
+
     <section class="reviews">
         <% if (classes.reviews.length) { %>
             <% classes.reviews.forEach(function(r) { %>
@@ -64,5 +93,6 @@
                     <% } else { %>
                         <h5>No Reviews Yet</h5>
                         <% } %>
+                            <button id="myBtn">Review Form</button>
     </section>
     <%- include('../partials/footer') %>

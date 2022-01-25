@@ -1,36 +1,39 @@
 <%- include('../partials/header') %>
-    <table id="list">
-        <thead>
-            <tr>
-                <th>Class Name</th>
-                <th>Subject</th>
-                <th>Instructor</th>
-                <th>Difficulty</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            <% classes.forEach(function(c) { %>
-                <form action="/classes/enrolled/<%=c._id%>?_method=DELETE" method="POST">
-                    <tr>
-                        <td>
-                            <%= c.title %>
-                        </td>
-                        <td>
-                            <%= c.subject %>
-                        </td>
-                        <td>
-                            <%= c.instructor %>
-                        </td>
-                        <td>
-                            <%= c.difficulty %>
-                        </td>
-                        <td><a href="/classes/<%= c._id %>">DETAILS</a></td>
-                        <td><input type="checkbox" name="unenroll" value="<%=c.title%>"><label>Unenroll</label></td>
-                    </tr>
-                    <% }); %>
-        </tbody>
-    </table>
-    <button type="submit">Unenroll from Class</button>
-    </form>
-    <%- include('../partials/footer') %>
+    <div class="container">
+        <table class="responsive-table">
+            <caption>Currently Enrolled Classes</caption>
+            <thead>
+                <tr>
+                    <th scope="col">Class Name</th>
+                    <th scope="col">Subject</th>
+                    <th scope="col">Instructor</th>
+                    <th scope="col">Difficulty</th>
+                    <th scope="col">Additional Info</th>
+                    <th scope="col">Unenroll ?</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% classes.forEach(function(c) { %>
+                    <form action="/classes/enrolled/<%=c._id%>?_method=DELETE" method="POST">
+                        <tr>
+                            <th scope="row">
+                                <%= c.title %>
+                            </th>
+                            <td data-title="Subject">
+                                <%= c.subject %>
+                            </td>
+                            <td data-title="Instructor">
+                                <%= c.instructor %>
+                            </td>
+                            <td data-title="Difficulty">
+                                <%= c.difficulty %>
+                            </td>
+                            <td><a href="/classes/<%= c._id %>">DETAILS</a></td>
+                            <td><input type="checkbox" name="unenroll" value="<%=c.title%>"><label>Unenroll</label></td>
+                        </tr>
+                        <% }); %>
+            </tbody>
+        </table>
+        <button type="submit">Unenroll from Class</button>
+        </form>
+        <%- include('../partials/footer') %>

@@ -256,3 +256,101 @@ button:hover {
   font-weight: normal;
 }
 
+.container {
+  margin: 5% 3%;
+}
+
+.responsive-table {
+  width: 100%;
+  margin-bottom: 1.5em;
+  border-spacing: 0;
+  font-size: 1em;
+}
+
+thead {
+  position: relative;
+  padding: 0;
+  border: 0;
+  height: auto;
+  width: auto;
+  overflow: auto;
+}
+
+th {
+  background-color: #7fc8f8;
+  border: 1px solid #7fc8f8;
+  font-weight: normal;
+  text-align: center;
+  color: white;
+}
+th:first-of-type {
+  text-align: left;
+}
+
+
+
+tr {
+  display: table-row;
+}
+
+th,
+td {
+  padding: 0.75em 0.5em;
+}
+
+tbody {
+  display: table-row-group;
+}
+
+tr {
+  margin-bottom: 1em;
+  display: table-row;
+  border-width: 1px;
+}
+
+tr:last-of-type {
+  margin-bottom: 0;
+}
+
+caption {
+  margin-bottom: 1em;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
+}
+
+tr {
+  margin-bottom: 1em;
+}
+
+tr:last-of-type {
+  margin-bottom: 0;
+}
+
+tr:nth-of-type(even) {
+  background-color: rgba(0, 0, 0, 0.12);
+}
+
+th[scope="row"] {
+  background-color: transparent;
+  color: rgba(0, 0, 0.87);
+  text-align: left;
+}
+
+td {
+  text-align: right;
+  border-left: 1px solid #7fc8f8;
+  border-bottom: 1px solid #7fc8f8;
+  text-align: center;
+}
+
+td:last-of-type {
+  border-right: 1px solid #7fc8f8;
+}
+
+td[data-title]:before {
+  content: none;
+  float: left;
+  font-size: 0.8em;
+  color: rgba(0, 0, 0, 0.54);
+}

@@ -1,33 +1,36 @@
 <%- include('../partials/header') %>
 
-    <table id="list">
-        <thead>
-            <tr>
-                <th>Class Name</th>
-                <th>Subject</th>
-                <th>Instructor</th>
-                <th>Difficulty</th>
-            </tr>
-        </thead>
-        <tbody>
-            <% classes.forEach(function(c) { %>
+    <div class="container">
+        <table class="responsive-table">
+            <caption>All Classes</caption>
+            <thead>
                 <tr>
-                    <td>
-                        <%= c.title %>
-                    </td>
-                    <td>
-                        <%= c.subject %>
-                    </td>
-                    <td>
-                        <%= c.instructor %>
-                    </td>
-                    <td>
-                        <%= c.difficulty %>
-                    </td>
-                    <td><a href="/classes/<%= c._id %>">DETAILS</a></td>
+                    <th scope="col">Class Name</th>
+                    <th scope="col">Subject</th>
+                    <th scope="col">Instructor</th>
+                    <th scope="col">Difficulty</th>
+                    <th scope="col">Additional Info</th>
                 </tr>
-                <% }); %>
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                <% classes.forEach(function(c) { %>
+                    <tr>
+                        <th scope="row">
+                            <%= c.title %>
+                        </th>
+                        <td data-title="Subject">
+                            <%= c.subject %>
+                        </td>
+                        <td data-title="Instructor">
+                            <%= c.instructor %>
+                        </td>
+                        <td data-title="Difficulty">
+                            <%= c.difficulty %>
+                        </td>
+                        <td><a href="/classes/<%= c._id %>">DETAILS</a></td>
+                    </tr>
+                    <% }); %>
+            </tbody>
+        </table>
 
-    <%- include('../partials/footer') %>
+        <%- include('../partials/footer') %>

@@ -10,6 +10,7 @@
             <th scope="col">Subject</th>
             <th scope="col">Instructor</th>
             <th scope="col">Difficulty</th>
+            <th scope="col">Additional Info</th>
             <th scope="col">Enroll Now?</th>
           </tr>
         </thead>
@@ -29,6 +30,7 @@
                 <td data-title="Difficulty">
                   <%= c.difficulty %>
                 </td>
+                <td><a href="/classes/<%= c._id %>">DETAILS</a></td>
                 <td data-title="Enroll Now"><input name="enroll" type="checkbox" value="<%=c.title%>"></td>
               </tr>
               <%};%>

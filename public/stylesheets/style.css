@@ -107,11 +107,12 @@ button:hover {
   border-radius: 50%;
   float: left;
   margin-right: 5vmin;
+  margin-left: 1vmin;
 }
 
 .dialogbox {
   margin-top: 4vmin;
-  margin-left: 8vmin;
+  margin-left: 10vmin;
 }
 
 .username,
@@ -119,7 +120,7 @@ button:hover {
   margin-top: 2vmin;
 }
 
-.review-wrapper > form > button {
+.message > form > button {
   display: flex;
   background-color: inherit;
   color: red;
@@ -135,7 +136,7 @@ button:hover {
   height: 11vmin;
   width: 8vmin;
   align-items: flex-end;
-  margin-left: 0.7vmin;
+  margin-left: 1.6vmin;
   font-size: 15px;
 }
 
@@ -404,4 +405,5 @@ td[data-title]:before {
 .about-me {
   display: flex;
   flex-direction: column;
+  margin-left: 5vmin;
 }

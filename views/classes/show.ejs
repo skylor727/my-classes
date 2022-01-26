@@ -89,26 +89,25 @@
             <% if (classes.reviews.length) { %>
                 <% classes.reviews.forEach(function(r) { %>
                     <div class="review-wrapper">
-                        <% if(user && user._id.equals(r.user)) { %>
-                            <form action="/reviews/<%=r._id %>?_method=DELETE" method="POST">
-                                <button type="submit">X</button>
-                            </form>
-                            <% } %>
-                                <img src="<%= r.userAvatar %>" alt="profile-pic">
-                                <span class=username>
-                                    <%= r.userName %>
-                                </span>
-                                <div class="dialogbox">
-                                    <div class="body">
-                                        <span class="tip tip-left"></span>
-                                        <div class="message">
-
+                        <img src="<%= r.userAvatar %>" alt="profile-pic">
+                        <span class=username>
+                            <%= r.userName %>
+                        </span>
+                        <div class="dialogbox">
+                            <div class="body">
+                                <span class="tip tip-left"></span>
+                                <div class="message">
+                                    <% if(user && user._id.equals(r.user)) { %>
+                                        <form action="/reviews/<%=r._id %>?_method=DELETE" method="POST">
+                                            <button type="submit">X</button>
+                                        </form>
+                                        <% } %>
                                             <span>
                                                 <%= r.content %>
                                             </span>
-                                        </div>
-                                    </div>
                                 </div>
+                            </div>
+                        </div>
                     </div>
                     <% }); %>
                         <% } else { %>

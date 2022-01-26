@@ -3,11 +3,11 @@
 }
 
 html {
-  width:100vw;
-  overflow-x:hidden;
+  width: 100vw;
+  overflow-x: hidden;
 }
 body {
-  font-family: "Brush Script MT", cursive;
+  font-family: 'Roboto', sans-serif;
   margin: 0;
   height: 100vh;
 }
@@ -191,12 +191,19 @@ button:hover {
   margin-right: 5vmin;
   margin-left: 1vmin;
 }
-
+.reviews-wrapper > h2 {
+  margin-left: 1vmin;
+}
 .dialogbox {
   margin-top: 4vmin;
   margin-left: 10vmin;
 }
 
+.review-rating {
+  width: 290px;
+  display: flex;
+  justify-content: center;
+}
 .username,
 .review-wrapper > img {
   margin-top: 2vmin;

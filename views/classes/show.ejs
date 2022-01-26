@@ -24,8 +24,35 @@
                             <%= classes.instructor %>
                         </b></h4>
                     <p>
-                        <%= classes.subject %> Instructor
+                        <%= classes.title %> Instructor
                     </p>
+                </div>
+            </div>
+            <div class="info-wrapper">
+                <div class="contact-info">
+                    <h3>Contact Info</h3>
+                    <a href="mailto: hcollier@uni.edu">hcollier@uni.edu</a>
+                    <br>
+                    <span>202-555-0102</span>
+                </div>
+                <div class="course-info">
+                    <h3>Course Information</h3>
+                    <span>Subject: <%= classes.subject %> </span>
+                    <br>
+                    <span>Difficulty Rating: <%= classes.difficulty %></span>
+                </div>
+                <div class="about-me">
+                    <h3>A little bit about
+                        <%= firstName %>
+                    </h3>
+                    <br>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget est sagittis, convallis mi id,
+                        euismod dui. Suspendisse potenti. Integer in enim a tortor scelerisque ullamcorper quis id ante.
+                        Aenean a erat vel augue eleifend blandit. Praesent porta odio vitae turpis iaculis, quis
+                        tristique elit tincidunt. Aliquam ultrices, ex non elementum ornare, erat justo mollis ligula,
+                        id porta dui metus eget massa. Aliquam fermentum mattis diam. Orci varius natoque penatibus et
+                        magnis dis parturient montes, nascetur ridiculus mus. Nam vitae efficitur mauris. Donec sit amet
+                        tortor euismod, faucibus odio et, hendrerit sapien.</p>
                 </div>
             </div>
         </div>
@@ -57,35 +84,37 @@
     </div>
 
     <section class="reviews">
-        <h2>Reviews</h2>
-        <% if (classes.reviews.length) { %>
-            <% classes.reviews.forEach(function(r) { %>
-                <div class="review-wrapper">
-                    <% if(user && user._id.equals(r.user)) { %>
-                        <form action="/reviews/<%=r._id %>?_method=DELETE" method="POST">
-                            <button type="submit">X</button>
-                        </form>
-                        <% } %>
-                            <img src="<%= r.userAvatar %>" alt="profile-pic">
-                            <span class=username>
-                                <%= r.userName %>
-                            </span>
-                            <div class="dialogbox">
-                                <div class="body">
-                                    <span class="tip tip-left"></span>
-                                    <div class="message">
+        <div class="reviews-wrapper">
+            <h2>Reviews</h2>
+            <% if (classes.reviews.length) { %>
+                <% classes.reviews.forEach(function(r) { %>
+                    <div class="review-wrapper">
+                        <% if(user && user._id.equals(r.user)) { %>
+                            <form action="/reviews/<%=r._id %>?_method=DELETE" method="POST">
+                                <button type="submit">X</button>
+                            </form>
+                            <% } %>
+                                <img src="<%= r.userAvatar %>" alt="profile-pic">
+                                <span class=username>
+                                    <%= r.userName %>
+                                </span>
+                                <div class="dialogbox">
+                                    <div class="body">
+                                        <span class="tip tip-left"></span>
+                                        <div class="message">
 
-                                        <span>
-                                            <%= r.content %>
-                                        </span>
+                                            <span>
+                                                <%= r.content %>
+                                            </span>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                </div>
-                <% }); %>
-                    <% } else { %>
-                        <h5>No Reviews Yet</h5>
-                        <% } %>
-                            <button id="myBtn">Review Form</button>
+                    </div>
+                    <% }); %>
+                        <% } else { %>
+                            <h5>No Reviews Yet</h5>
+                            <% } %>
+                                <button id="myBtn">Review Form</button>
+        </div>
     </section>
     <%- include('../partials/footer') %>

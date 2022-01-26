@@ -162,6 +162,7 @@ button:hover {
 .dialogbox .body {
   position: relative;
   max-width: 300px;
+  min-width: 300px;
   height: auto;
   padding: 5px;
   background-color: #ccc;
@@ -174,6 +175,8 @@ button:hover {
   border-radius: 3px;
   font-size: 14px;
   line-height: 1.5;
+  max-width: 290px;
+  min-width: 290px;
 }
 
 .body {

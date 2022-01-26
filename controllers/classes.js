@@ -11,9 +11,10 @@ const index = (req, res) => {
 
 const show = (req, res) => {
   Class.findById(req.params.id).then((classes) => {
+    console.log(classes.instructor.name);
     res.render("classes/show", {
       classes,
-      firstName: classes.instructor.split(" ")[0],
+      firstName: classes.instructor.name.split(" ")[0],
     });
   });
 };

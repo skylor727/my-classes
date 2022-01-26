@@ -383,6 +383,7 @@ td[data-title]:before {
 
 .card > img {
   width: 375px;
+  border-radius: 50%;
 }
 .details-wrapper {
   margin: 15px 0 0 10px;

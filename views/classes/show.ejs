@@ -18,10 +18,10 @@
     <section id="show-page">
         <div class="details-wrapper">
             <div class="card">
-                <img src="https://i.imgur.com/iS057KG.png" alt="instructor">
+                <img src="<%= classes.instructor.image %>>" alt="instructor">
                 <div class="info-container">
                     <h4><b>
-                            <%= classes.instructor %>
+                            <%= classes.instructor.name %>
                         </b></h4>
                     <p>
                         <%= classes.title %> Instructor
@@ -31,9 +31,13 @@
             <div class="info-wrapper">
                 <div class="contact-info">
                     <h3>Contact Info</h3>
-                    <a href="mailto: hcollier@uni.edu">hcollier@uni.edu</a>
+                    <a href="mailto: <%=classes.instructor.email%>>">
+                        <%=classes.instructor.email%>
+                    </a>
                     <br>
-                    <span>202-555-0102</span>
+                    <span>
+                        <%= classes.instructor.phone%>
+                    </span>
                 </div>
                 <div class="course-info">
                     <h3>Course Information</h3>
@@ -66,7 +70,7 @@
                 <fieldset>
                     <legend>Review</legend>
                     <span class="close">&times;</span>
-                    <h3>Leave a Review for <%=classes.instructor%>'s Class</h3>
+                    <h3>Leave a Review for <%=classes.instructor.name%>'s Class</h3>
                     <label for="field4"><span>Rating <span class="required">*</span></span><select name="rating"
                             class="select-field">
                             <option value="1">1</option>

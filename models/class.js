@@ -22,10 +22,17 @@ const reviewSchema = new Schema(
   }
 );
 
+const instructorSchema = new Schema({
+  name: String,
+  image: String,
+  email: String,
+  phone: String,
+});
+
 const classSchema = new Schema({
   title: { type: String, unique: true },
   subject: String,
-  instructor: String,
+  instructor: instructorSchema,
   difficulty: { type: Number, min: 1, max: 10 },
   enrollees: [{ type: Schema.Types.ObjectId, ref: "User" }],
   reviews: [reviewSchema],

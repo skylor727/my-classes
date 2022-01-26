@@ -1,6 +1,5 @@
 <%- include('../partials/header') %>
     <script>
-
         document.addEventListener('DOMContentLoaded', () => {
             const modal = document.getElementById("myModal");
             const btn = document.getElementById("myBtn");
@@ -17,26 +16,19 @@
     </script>
 
     <section id="show-page">
-        <h2>
-            <%= classes.title %> Class Information
-        </h2>
-        <div>Title: </div>
-        <div>
-            <%= classes.title %>
+        <div class="details-wrapper">
+            <div class="card">
+                <img src="https://i.imgur.com/iS057KG.png" alt="instructor">
+                <div class="info-container">
+                    <h4><b>
+                            <%= classes.instructor %>
+                        </b></h4>
+                    <p>
+                        <%= classes.subject %> Instructor
+                    </p>
+                </div>
+            </div>
         </div>
-        <div>Subject: </div>
-        <div>
-            <%= classes.subject %>
-        </div>
-        <div>instructor: </div>
-        <div>
-            <%= classes.instructor %>
-        </div>
-        <div>Difficulty: </div>
-        <div>
-            <%=classes.difficulty%>
-        </div>
-        <a href="/classes/new">Enrollment Page</a>
     </section>
 
     <!-- The Modal -->
@@ -65,29 +57,30 @@
     </div>
 
     <section class="reviews">
+        <h2>Reviews</h2>
         <% if (classes.reviews.length) { %>
             <% classes.reviews.forEach(function(r) { %>
                 <div class="review-wrapper">
-                    <img src="<%= r.userAvatar %>" alt="profile-pic">
-                    <span class=username>
-                        <%= r.userName %>
-                    </span>
-                    <div class="dialogbox">
-                        <div class="body">
-                            <span class="tip tip-left"></span>
-                            <div class="message">
-                                <form action="/reviews/<%=r._id %>?_method=DELETE" method="POST">
-                                    <button type="submit">X</button>
-                                </form>
-                                <span>
-                                    <%= r.content %>
-                                </span>
-                            </div>
-                        </div>
-                        <% if(user && user._id.equals(r.user)) { %>
+                    <% if(user && user._id.equals(r.user)) { %>
+                        <form action="/reviews/<%=r._id %>?_method=DELETE" method="POST">
+                            <button type="submit">X</button>
+                        </form>
+                        <% } %>
+                            <img src="<%= r.userAvatar %>" alt="profile-pic">
+                            <span class=username>
+                                <%= r.userName %>
+                            </span>
+                            <div class="dialogbox">
+                                <div class="body">
+                                    <span class="tip tip-left"></span>
+                                    <div class="message">
 
-                            <% } %>
-                    </div>
+                                        <span>
+                                            <%= r.content %>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
                 </div>
                 <% }); %>
                     <% } else { %>

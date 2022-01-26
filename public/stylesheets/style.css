@@ -84,9 +84,8 @@ button:hover {
   position: relative;
   max-width: 300px;
   height: auto;
-  margin: 20px 10px;
   padding: 5px;
-  background-color: #dadada;
+  background-color: #ccc;
   border-radius: 3px;
   border: 5px solid #ccc;
 }
@@ -96,7 +95,11 @@ button:hover {
   border-radius: 3px;
   font-size: 14px;
   line-height: 1.5;
-  color: #797979;
+ 
+}
+
+.body {
+  top: 2.3vmin;
 }
 
 .review-wrapper > img {
@@ -108,10 +111,17 @@ button:hover {
 }
 
 .dialogbox {
+  margin-top: 4vmin;
   margin-left: 8vmin;
 }
 
-.message > form > button {
+.username,
+.review-wrapper > img {
+  margin-top: 2vmin;
+}
+
+
+.review-wrapper > form > button {
   display: flex;
   background-color: inherit;
   color: red;
@@ -136,7 +146,11 @@ button:hover {
 }
 
 .review-wrapper {
-  height: 10vmin;
+  width: 20%;
+  height: 15vmin;
+  box-shadow: 8px 4px 8px 4px rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  word-wrap: break-word;
 }
 
 .modal {
@@ -243,7 +257,6 @@ button:hover {
   -moz-box-shadow: inset -1px -1px 3px #7fc8f8;
   -webkit-box-shadow: inset -1px -1px 3px #7fc8f8;
   border-radius: 3px;
-  border-radius: 3px;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   font-weight: bold;
@@ -286,8 +299,6 @@ th {
 th:first-of-type {
   text-align: left;
 }
-
-
 
 tr {
   display: table-row;
@@ -353,4 +364,24 @@ td[data-title]:before {
   float: left;
   font-size: 0.8em;
   color: rgba(0, 0, 0, 0.54);
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: 100%;
+}
+
+.info-container {
+  padding: 2px 16px;
+  width: 100%;
+  text-align: center;
+}
+
+.card > img {
+  width: 375px;
+}
+.details-wrapper {
+  margin: 5px 0 0 5px;
+  width: 375px;
 }

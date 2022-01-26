@@ -9,7 +9,7 @@
                     <th scope="col">Instructor</th>
                     <th scope="col">Difficulty</th>
                     <th scope="col">Additional Info</th>
-                    <th scope="col">Unenroll ?</th>
+                    <th scope="col">Unenroll?</th>
                 </tr>
             </thead>
             <tbody>
@@ -29,11 +29,11 @@
                                 <%= c.difficulty %>
                             </td>
                             <td><a href="/classes/<%= c._id %>">DETAILS</a></td>
-                            <td><input type="checkbox" name="unenroll" value="<%=c.title%>"><label>Unenroll</label></td>
+                            <td><input type="checkbox" name="unenroll" value="<%=c.title%>"></td>
                         </tr>
                         <% }); %>
             </tbody>
         </table>
-        <button type="submit">Unenroll from Class</button>
+        <button type="submit">Unenroll</button>
         </form>
         <%- include('../partials/footer') %>

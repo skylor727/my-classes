@@ -12,18 +12,31 @@
 </head>
 
 <body>
-  <section class="nav-wrapper">
-    <img src="/images/read-book.svg">
+  <div id="container">
     <nav>
-      <a href="/">Home</a>
-      <% if (user) { %>
-        <a href="/classes/enrolled">Enrolled Classes</a>
-        <a href="/classes/new">Enroll in a new class</a>
-        <a href="/classes">Class list</a>
-        <a href="/logout">Logout</a>
-
-        <% } else { %>
-          <a href="/auth/google">Login</a>
-          <% } %>
+      <div id="logo">
+        <img src="/images/read-book.svg" alt="book">
+        <a>My Classes</a>
+      </div>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <% if (user) { %>
+          <li class="dropdown" onmouseover="hover(this);" onmouseout="out(this);"><a href="#">Classes &nbsp;<i
+                class="fa fa-caret-down"></i></a>
+            <div class="dd">
+              <div id="up_arrow"></div>
+              <ul>
+                <li><a href="/classes/enrolled">Enrolled Classes</a></li>
+                <li><a href="/classes/new">Enroll in a Class</a></li>
+                <li><a href="/classes">All Classes</a></li>
+              </ul>
+            </div>
+          </li>
+          <li><a href="/logout">Logout</a></li>
+          <% } else { %>
+            <li><a href="/auth/google">Login</a></li>
+      </ul>
+      <% } %>
     </nav>
+  </div>
   </section>

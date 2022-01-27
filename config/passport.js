@@ -20,6 +20,7 @@ passport.use(
             googleId: profile.id,
             email: profile.emails[0].value,
             avatar: profile.photos[0].value,
+            role: "ROLE_BASIC",
           });
           return cb(null, user);
         } catch (err) {

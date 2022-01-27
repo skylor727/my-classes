@@ -694,3 +694,9 @@ td[data-title]:before {
 textarea {
   resize: none;
 }
+.class-modal {
+  width: 80%;
+  height: 100%;
+  max-width: unset;
+}
+

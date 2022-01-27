@@ -3,19 +3,20 @@
 }
 
 html {
-  width: 100vw;
   overflow-x: hidden;
 }
 body {
   font-family: "Roboto", sans-serif;
   margin: 0;
   height: 100vh;
+  overflow-x: scroll;
 }
 #container {
-  position: relative;
+  position: fixed;
   width: 100%;
   background-color: #4eb5f1;
   box-shadow: -2px -2px 5px black, 2px -2px 5px black;
+  z-index: 100;
 }
 
 #container > nav {
@@ -48,7 +49,6 @@ body {
   padding: 0;
   text-align: center;
   display: inline-block;
-  min-width: 120px;
 }
 
 #container > nav > ul > li > a {
@@ -122,7 +122,6 @@ a {
   width: 4.5vmin;
   object-fit: contain;
   margin-right: auto;
-  padding-left: 5px;
 }
 
 button {
@@ -159,7 +158,6 @@ button:hover {
 }
 
 .dialogbox .body {
-  position: relative;
   max-width: 300px;
   min-width: 300px;
   height: auto;
@@ -180,13 +178,10 @@ button:hover {
   top: 2.3vmin;
 }
 
-.review-wrapper > img {
+.review-info-container > img {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  float: left;
-  margin-right: 5vmin;
-  margin-left: 1vmin;
 }
 
 .reviews-wrapper > h5 {
@@ -196,16 +191,26 @@ button:hover {
 .reviews-wrapper > h2 {
   margin-left: 1vmin;
 }
-.dialogbox {
-  margin-top: 4vmin;
-  margin-left: 10vmin;
+
+
+.review-info-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 20px;
+  text-align: center;
+}
+.dialog-review-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
 }
 
 .review-rating {
-  width: 290px;
-  display: flex;
-  justify-content: center;
+  margin-top: 5px;
 }
+
+
 .username,
 .review-wrapper > img {
   margin-top: 2vmin;
@@ -218,17 +223,6 @@ button:hover {
   border: 0px;
   padding: 0;
   float: right;
-}
-
-.username {
-  display: flex;
-  align-self: flex-start;
-  position: absolute;
-  height: 11vmin;
-  width: 8vmin;
-  align-items: flex-end;
-  margin-left: 1.6vmin;
-  font-size: 15px;
 }
 
 .reviews > button {
@@ -248,14 +242,13 @@ button:hover {
   width: 20%;
   height: 15vmin;
   word-wrap: break-word;
+  overflow-x: visible;
+  display: flex;
 }
 
 .reviews-wrapper {
-  width: 100%;
   box-shadow: 8px 4px 8px 8px rgba(0, 0, 0, 0.2);
-  transition: 0.3s;
-  margin: 15px 0 0 10px;
-  height: 100%;
+  margin-left: 10px;
 }
 
 .modal {
@@ -486,7 +479,7 @@ td[data-title]:before {
   border-radius: 50%;
 }
 .details-wrapper {
-  margin: 15px 0 0 10px;
+  margin: 85px 0 0 10px;
   display: flex;
   box-shadow: 8px 4px 8px 8px rgba(0, 0, 0, 0.2);
   transition: 0.3s;
@@ -511,6 +504,7 @@ td[data-title]:before {
 
 .homepage-header {
   width: 100%;
+  margin-top: 63px;
   height: 400px;
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url("https://i.imgur.com/WJt7kUF.jpeg");
@@ -588,6 +582,7 @@ td[data-title]:before {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   width: 25%;
+  min-width: 340px;
 }
 
 .home-card:hover {
@@ -604,6 +599,7 @@ td[data-title]:before {
   height: 50%;
   display: flex;
   justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 
 .modal-img {
@@ -628,6 +624,7 @@ td[data-title]:before {
   overflow: auto;
   background-color: rgb(0, 0, 0);
   background-color: rgba(0, 0, 0, 0.9);
+  margin-top: 40px;
 }
 
 .home-card > img {

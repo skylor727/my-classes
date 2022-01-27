@@ -93,26 +93,29 @@
             <% if (classes.reviews.length) { %>
                 <% classes.reviews.forEach(function(r) { %>
                     <div class="review-wrapper">
-                        <img src="<%= r.userAvatar %>" alt="profile-pic">
-                        <span class=username>
-                            <%= r.userName %>
-                        </span>
-                        <div class="dialogbox">
-                            <div class="body">
-                                <span class="tip tip-left"></span>
-                                <div class="message">
-                                    <% if(user && user._id.equals(r.user)) { %>
-                                        <form action="/reviews/<%=r._id %>?_method=DELETE" method="POST">
-                                            <button type="submit">X</button>
-                                        </form>
-                                        <% } %>
-                                            <span>
-                                                <%= r.content %>
-                                            </span>
+                        <div class="review-info-container"><img src="<%= r.userAvatar %>" alt="profile-pic">
+                            <span class=username>
+                                <%= r.userName %>
+                            </span>
+                        </div>
+                        <div class="dialog-review-container">
+                            <div class="dialogbox">
+                                <div class="body">
+                                    <span class="tip tip-left"></span>
+                                    <div class="message">
+                                        <% if(user && user._id.equals(r.user)) { %>
+                                            <form action="/reviews/<%=r._id %>?_method=DELETE" method="POST">
+                                                <button type="submit">X</button>
+                                            </form>
+                                            <% } %>
+                                                <span>
+                                                    <%= r.content %>
+                                                </span>
+                                    </div>
                                 </div>
                             </div>
+                            <span class="review-rating">Rating: <%=r.rating %>/5</span>
                         </div>
-                        <span class="review-rating">Rating: <%=r.rating %>/5</span>
                     </div>
                     <% }); %>
                         <% } else { %>

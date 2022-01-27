@@ -1,3 +1,66 @@
 <%- include('./partials/header')%>
-  <h1>Welcome to My Classes</h1>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      let modal = document.querySelector('.img-modal');
+      let imgs = document.querySelectorAll('.modal-img');
+      let modalImg = document.getElementById("img01");
+      let captionText = document.querySelector(".caption");
+
+      imgs.forEach(function (img) {
+        img.addEventListener('click', function () {
+          modal.style.display = "block";
+          modalImg.src = this.src;
+          captionText.innerText = this.alt;
+        });
+      })
+      document.querySelector('.close-img').addEventListener('click', () => modal.style.display = "none");
+    });
+  </script>
+  <section class="homepage">
+    <div class="homepage-header">
+      <div class="fade-in-text">
+        <h1>Welcome to My Classes</h1>
+        <br>
+        <h3>Enroll Now</h3>
+      </div>
+    </div>
+    <div class="card-container">
+      <div class="home-card">
+        <img class="modal-img" src="https://i.imgur.com/VLwpFe8.png" alt="Enrolled Class List">
+        <div class="img-modal">
+          <span class="close-img">&times;</span>
+          <img class="img-modal-content" id="img01">
+          <div class="caption"></div>
+        </div>
+        <div class="home-card-container">
+          <h4><b>Enrolled Classes</b></h4>
+          <p>Easily access a list of your enrolled classes!</p>
+        </div>
+      </div>
+      <div class="home-card">
+        <img class="modal-img" src="https://i.imgur.com/AhNJ5Px.png" alt="Enroll in a class">
+        <div class="img-modal">
+          <span class="close-img-span">&times;</span>
+          <img class="img-modal-content" id="img01">
+          <div class="caption"></div>
+        </div>
+        <div class="home-card-container">
+          <h4><b>Enrolled Classes</b></h4>
+          <p>Easily access a list of your enrolled classes!</p>
+        </div>
+      </div>
+      <div class="home-card">
+        <img class="modal-img" src="https://i.imgur.com/uy3G4c2.png" alt="List of all classes">
+        <div class="img-modal">
+          <span class="close-img">&times;</span>
+          <img class="img-modal-content" id="img01">
+          <div class="caption"></div>
+        </div>
+        <div class="home-card-container">
+          <h4><b>Enrolled Classes</b></h4>
+          <p>Easily access a list of your enrolled classes!</p>
+        </div>
+      </div>
+    </div>
+  </section>
   <%- include('./partials/footer')%>

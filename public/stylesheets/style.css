@@ -11,6 +11,7 @@ body {
   height: 100vh;
   overflow-x: scroll;
 }
+
 #container {
   position: fixed;
   width: 100%;
@@ -192,7 +193,6 @@ button:hover {
   margin-left: 1vmin;
 }
 
-
 .review-info-container {
   display: flex;
   flex-direction: column;
@@ -209,7 +209,6 @@ button:hover {
 .review-rating {
   margin-top: 5px;
 }
-
 
 .username,
 .review-wrapper > img {
@@ -286,12 +285,13 @@ button:hover {
 
 .form-style-3 {
   max-width: 450px;
-  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
+
 .form-style-3 label {
   display: block;
   margin-bottom: 10px;
 }
+
 .form-style-3 label > span {
   float: left;
   width: 100px;
@@ -299,6 +299,7 @@ button:hover {
   font-size: 13px;
   text-shadow: 1px 1px 1px #fff;
 }
+
 .form-style-3 fieldset {
   border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -311,6 +312,7 @@ button:hover {
   -moz-box-shadow: inset 0px 0px 15px #7fc8f8;
   -webkit-box-shadow: inset 0px 0px 15px #7fc8f8;
 }
+
 .form-style-3 fieldset legend {
   border-top: 1px solid #7fc8f8;
   border-left: 1px solid #7fc8f8;
@@ -346,6 +348,7 @@ button:hover {
   background: #f9f9f9;
   width: 50%;
 }
+
 .form-style-3 input[type="submit"] {
   background: #7fc8f8;
   border: 1px solid #f9f9f9;
@@ -359,9 +362,11 @@ button:hover {
   -moz-border-radius: 3px;
   font-weight: bold;
 }
+
 .form-style-3 input[type="submit"]:hover {
   cursor: pointer;
 }
+
 .required {
   color: red;
   font-weight: normal;
@@ -679,8 +684,13 @@ td[data-title]:before {
   text-decoration: none;
   cursor: pointer;
 }
+
 @media only screen and (max-width: 700px) {
   .img-modal-content {
     width: 100%;
   }
+}
+
+textarea {
+  resize: none;
 }

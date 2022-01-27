@@ -13,7 +13,6 @@ require("./config/database");
 require("./config/passport");
 
 var indexRouter = require("./routes/index");
-var usersRouter = require("./routes/users");
 var classesRouter = require("./routes/classes");
 var reviewsRouter = require("./routes/reviews");
 
@@ -46,7 +45,6 @@ const isLoggedIn = require("./config/auth");
 
 app.use("/", indexRouter);
 app.use("/classes", isLoggedIn, classesRouter);
-app.use("/users", usersRouter);
 app.use("/", isLoggedIn, reviewsRouter);
 
 // catch 404 and forward to error handler

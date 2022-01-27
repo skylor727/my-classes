@@ -10,6 +10,7 @@ const userSchema = new Schema(
     },
     email: String,
     avatar: String,
+    role: { type: String, required: true, default: "ROLE_BASIC" },
   },
   {
     timestamps: true,

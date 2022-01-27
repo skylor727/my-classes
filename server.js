@@ -42,7 +42,6 @@ app.use(function (req, res, next) {
   next();
 });
 const isLoggedIn = require("./config/auth");
-const authRole = require("./config/basicAuth");
 
 app.use("/", indexRouter);
 app.use("/classes", isLoggedIn, classesRouter);

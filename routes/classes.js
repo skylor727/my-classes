@@ -1,6 +1,6 @@
 var express = require("express");
 var router = express.Router();
-var isLoggedIn = require("../config/auth");
+const authRole = require("../config/basicAuth");
 const classesCtrl = require("../controllers/classes");
 
 //GET index page
@@ -8,6 +8,8 @@ router.get("/", classesCtrl.index);
 
 //POST the enrollment form
 router.post("/enroll", classesCtrl.enrollInClass);
+
+router.post("/create", authRole("ADMIN_ROLE"), classesCtrl.create);
 
 //GET enrollment page
 router.get("/new", classesCtrl.new);

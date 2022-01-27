@@ -51,31 +51,32 @@
             <div id="myModal" class="modal my-class-modal">
                 <!-- Modal content -->
                 <div class="modal-content form-style-3 class-modal">
-                    <form>
+                    <form action="/classes/create" method="POST">
                         <fieldset>
                             <legend>Add a class</legend>
                             <span class="close">&times;</span>
-                            <h3>Add a class to the List</h3>
-                            <label for="field6"><span>Class Name <span class="required">*</span></span><input
-                                    type="text"></label>
-                            <label for="field6"><span>Class Subject<span class="required">*</span></span><input
-                                    type="text" name="title"></label>
-                            <label for="field4"><span>Instructor<span class="required">*</span></span><select
-                                    name="instructor" class="select-field">
+                            <label for="field1"><span>Class Name <span class="required">*</span></span><input
+                                    name="title" type="text"></label>
+                            <label for="field2"><span>Class Subject<span class="required">*</span></span><input
+                                    name="subject" type="text" name="title"></label>
+                            <label for="field3"><span>Instructor<span class="required">*</span></span><select
+                                    name="instructor" name="instructor" class="select-field">
                                     <% classes.forEach((c)=> { %>
                                         <option value="<%= c.instructor.name %>">
                                             <%= c.instructor.name %>
                                         </option>
                                         <% })%>
                                 </select>
-                                <label for="field4"><span>Rating <span class="required">*</span></span><select
-                                        name="difficulty" class="select-field">
-                                        <% for(let i=1; i <=10; i++) { %>
-                                            <option value="<%=i%>">
-                                                <%=i %>
-                                            </option>
-                                            <%}%>
-                                    </select></label>
+                            </label>
+                            </label>
+                            <label for="field4"><span>Difficulty <span class="required">*</span></span><select
+                                    name="difficulty" class="select-field">
+                                    <% for(let i=1; i <=10; i++) { %>
+                                        <option value="<%=i%>">
+                                            <%=i %>
+                                        </option>
+                                        <%}%>
+                                </select></label>
                             </label>
                             <label><span> </span><input type="submit" value="Add Class" /></label>
                         </fieldset>

@@ -1,6 +1,19 @@
 const Class = require("../models/class");
 const User = require("../models/user");
 
+const create = (req, res) => {
+  Class.findOne({ "instructor.name": req.body.instructor })
+    .then((c) => {
+      Class.create({
+        title: req.body.title,
+        subject: req.body.subject,
+        instructor: c.instructor,
+        difficulty: parseInt(req.body.difficulty),
+      });
+    })
+    .then(() => res.redirect("/classes"));
+};
+
 const index = (req, res) => {
   Class.find({}).then((classes) => {
     User.findById(req.user.id).then((user) =>
@@ -59,4 +72,5 @@ module.exports = {
   enrollInClass,
   enrolled,
   delete: deleteClass,
+  create,
 };

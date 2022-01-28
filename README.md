@@ -3,7 +3,7 @@ A full stack CRUD application for enrolling and unenrolling in various classes r
 ## Screenshots
 ![HomePage](https://i.imgur.com/dPxP9wA.png)
 ![Home page modals](https://i.imgur.com/b9VO319.png)
-![Available classes list]https://i.imgur.com/AhNJ5Px.png)
+![Available classes list](https://i.imgur.com/AhNJ5Px.png)
 ![Details page for a specific class](https://i.imgur.com/cG9EVEL.png)
 ![Review modal](https://i.imgur.com/XV9kv2W.png)
 ## Technologies Used

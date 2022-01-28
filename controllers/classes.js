@@ -9,6 +9,7 @@ const create = (req, res) => {
         subject: req.body.subject,
         instructor: c.instructor,
         difficulty: parseInt(req.body.difficulty),
+        user: req.user._id,
       });
     })
     .then(() => res.redirect("/classes"));
@@ -65,6 +66,13 @@ const deleteClass = (req, res) => {
   ).then((classes) => res.redirect("/classes/enrolled"));
 };
 
+const remove = (req, res) => {
+  Class.findById(req.params.id).then((fClass) => {
+    fClass.remove();
+    res.redirect("/classes");
+  });
+};
+
 module.exports = {
   show,
   index,
@@ -73,4 +81,5 @@ module.exports = {
   enrolled,
   delete: deleteClass,
   create,
+  remove,
 };

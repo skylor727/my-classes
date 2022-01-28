@@ -104,7 +104,7 @@ a {
   position: relative;
   width: 20px;
   height: 20px;
-  left: 42%;
+  left: 26%;
   top: -10px;
   background-color: aliceblue;
   transform: rotate(45deg);
@@ -720,4 +720,22 @@ fieldset > legend {
 fieldset > h3 {
   margin-top: 0;
   text-align: center;
+}
+
+.a > form {
+  display: inline-block;
+}
+.table-button {
+  margin: 0;
+  background-color: unset;
+  border: 0;
+  padding: 0;
+  color: red;
+  position:absolute;
+  right: 70px;
+}
+
+.table-form {
+  display: flex;
+  float: right;
 }

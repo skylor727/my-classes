@@ -41,13 +41,18 @@
                         <td data-title="Difficulty">
                             <%= c.difficulty %>
                         </td>
-                        <td><a href="/classes/<%= c._id %>">DETAILS</a></td>
+                        <td>
+                            <a href="/classes/<%= c._id %>">DETAILS <% if(user && user._id.equals(c.user)) { %>
+                                    <form class="table-form" action="/classes/<%=c._id %>?_method=DELETE" method="POST">
+                                        <button class="table-button" type="submit">X</button>
+                                    </form></a>
+                            <% } %>
+                        </td>
                     </tr>
                     <% }); %>
             </tbody>
         </table>
         <% if(user.role==="ADMIN_ROLE" ) { %>
-
             <div id="myModal" class="modal my-class-modal">
                 <!-- Modal content -->
                 <div class="modal-content form-style-3 class-modal">

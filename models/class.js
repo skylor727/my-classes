@@ -36,6 +36,10 @@ const classSchema = new Schema({
   difficulty: { type: Number, min: 1, max: 10 },
   enrollees: [{ type: Schema.Types.ObjectId, ref: "User" }],
   reviews: [reviewSchema],
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: "User",
+  },
 });
 
 module.exports = mongoose.model("Class", classSchema);

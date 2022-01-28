@@ -18,7 +18,10 @@ A full stack CRUD application for enrolling and unenrolling in various classes r
 ## Getting Started
 [Access here](https://sei-classes.herokuapp.com/)
 - Start by logging in via Google to access additional screens
-- Once logged in you will be able to access the pages to - Enroll In a Class - See a list of all Classes - See a list of only your enrolled classed
+- Once logged in you will be able to access the pages to 
+   - Enroll In a Class 
+   - See a list of all Classes 
+   - See a list of only your enrolled classes
 ## Work in progress additions
    - Adding mobile styling
    - Adding the ability to login or register with more than just Google.

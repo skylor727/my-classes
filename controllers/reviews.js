@@ -9,7 +9,7 @@ const deleteReview = (req, res) => {
       classR.reviews.remove(req.params.id);
       return classR.save();
     })
-    .then((classR) => res.redirect(`/classes/${classR._id}`));
+    .then((classR) => res.redirect(`/my-classes/classes/${classR._id}`));
 };
 
 const create = (req, res) => {
@@ -19,7 +19,7 @@ const create = (req, res) => {
     req.body.userAvatar = req.user.avatar;
     classR.reviews.push(req.body);
     classR.save(() => {
-      res.redirect(`/classes/${classR._id}`);
+      res.redirect(`/my-classes/classes/${classR._id}`);
     });
   });
 };

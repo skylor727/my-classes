@@ -19,14 +19,14 @@ router.get(
 router.get(
   "/oauth2callback",
   passport.authenticate("google", {
-    successRedirect: "/",
-    failureRedirect: "/",
+    successRedirect: "/my-classes/",
+    failureRedirect: "/my-classes/",
   })
 );
 
 router.get("/logout", (req, res) => {
   req.logout();
-  res.redirect("/");
+  res.redirect("/my-classes/");
 });
 
 router.get('/', (req, res) => {

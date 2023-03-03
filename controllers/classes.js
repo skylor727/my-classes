@@ -12,7 +12,7 @@ const create = (req, res) => {
         user: req.user._id,
       });
     })
-    .then(() => res.redirect("/classes"));
+    .then(() => res.redirect("/my-classes/classes"));
 };
 
 const index = (req, res) => {
@@ -46,7 +46,7 @@ const enrollInClass = (req, res) => {
         c.enrollees.push(user);
         c.save();
       });
-      res.redirect("/classes/enrolled");
+      res.redirect("/my-classes/classes/enrolled");
     });
   });
 };
@@ -63,13 +63,13 @@ const deleteClass = (req, res) => {
   Class.updateMany(
     { title: { $in: req.body.unenroll } },
     { $pull: { enrollees: req.user.id } }
-  ).then((classes) => res.redirect("/classes/enrolled"));
+  ).then((classes) => res.redirect("/my-classes/classes/enrolled"));
 };
 
 const remove = (req, res) => {
   Class.findById(req.params.id).then((fClass) => {
     fClass.remove();
-    res.redirect("/classes");
+    res.redirect("/my-classes/classes");
   });
 };
 

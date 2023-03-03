@@ -104,7 +104,7 @@
                                     <span class="tip tip-left"></span>
                                     <div class="message">
                                         <% if(user && user._id.equals(r.user)) { %>
-                                            <form action="/reviews/<%=r._id %>?_method=DELETE" method="POST">
+                                            <form action="/my-classes/reviews/<%=r._id %>?_method=DELETE" method="POST">
                                                 <button type="submit">X</button>
                                             </form>
                                             <% } %>

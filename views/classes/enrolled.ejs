@@ -14,7 +14,7 @@
             </thead>
             <tbody>
                 <% classes.forEach(function(c) { %>
-                    <form action="/classes/enrolled/<%=c._id%>?_method=DELETE" method="POST">
+                    <form action="/my-classes/classes/enrolled/<%=c._id%>?_method=DELETE" method="POST">
                         <tr>
                             <th scope="row">
                                 <%= c.title %>

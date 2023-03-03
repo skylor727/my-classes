@@ -33,7 +33,7 @@ app.use(
     saveUninitialized: true,
   })
 );
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static("./public/my-classes"));
 app.use(methodOverride("_method"));
 app.use(passport.initialize());
 app.use(passport.session());

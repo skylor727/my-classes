@@ -42,7 +42,7 @@
                             <%= c.difficulty %>
                         </td>
                         <td>
-                            <a href="/classes/<%= c._id %>">DETAILS <% if(user && user._id.equals(c.user)) { %>
+                            <a href="/my-classes/classes/<%= c._id %>">DETAILS <% if(user && user._id.equals(c.user)) { %>
                                     <form class="table-form" action="/classes/<%=c._id %>?_method=DELETE" method="POST">
                                         <button class="table-button" type="submit">X</button>
                                     </form></a>

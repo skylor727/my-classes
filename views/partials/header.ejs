@@ -22,21 +22,21 @@
         <a>My Classes</a>
       </div>
       <ul>
-        <li><a href="/">Home</a></li>
+        <li><a href="/my-classes/">Home</a></li>
         <% if (user) { %>
           <li class="dropdown"><a href="#">Classes &nbsp;<i class="fa fa-caret-down"></i></a>
             <div class="dd">
               <div id="up_arrow"></div>
               <ul>
-                <li><a href="/classes/enrolled">Enrolled Classes</a></li>
-                <li><a href="/classes/new">Enroll in a Class</a></li>
-                <li><a href="/classes">All Classes</a></li>
+                <li><a href="/my-classes/classes/enrolled">Enrolled Classes</a></li>
+                <li><a href="/my-classes/classes/new">Enroll in a Class</a></li>
+                <li><a href="/my-classes/classes">All Classes</a></li>
               </ul>
             </div>
           </li>
-          <li><a href="/logout">Logout</a></li>
+          <li><a href="/my-classes/logout">Logout</a></li>
           <% } else { %>
-            <li><a href="/auth/google">Login</a></li>
+            <li><a href="/my-classes/auth/google">Login</a></li>
             <% } %>
       </ul>
     </nav>

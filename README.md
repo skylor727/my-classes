@@ -18,7 +18,7 @@ A full stack CRUD application for enrolling and unenrolling in various classes r
    - Mongo DB
    - Mongoose
 ## Getting Started
-- [Access here](https://sei-classes.herokuapp.com/)
+- [Access here](https://skylor-p.com/my-classes/)
 - [Trello](https://trello.com/b/GlOTASTa/project-2)
 - Start by logging in via Google to access additional screens
 - Once logged in you will be able to access the pages to 
